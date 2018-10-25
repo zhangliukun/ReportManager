@@ -22,6 +22,8 @@ public class Admin implements Serializable {
     @Column(nullable = false)
     private String passwd;
 
+
+
     public Long getId() {
         return id;
     }
