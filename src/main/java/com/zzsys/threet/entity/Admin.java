@@ -19,6 +19,9 @@ public class Admin implements Serializable {
     @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false)
+    private String passwd;
+
     public Long getId() {
         return id;
     }
@@ -41,5 +44,13 @@ public class Admin implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 }
