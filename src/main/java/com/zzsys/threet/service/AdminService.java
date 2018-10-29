@@ -9,20 +9,20 @@ import java.io.Serializable;
 import java.util.List;
 
 @Service
-public class AdminService implements Serializable {
+public class AdminService{
 
     @Autowired
     private AdminRepository adminRepository;
 
-    public List<Admin> findAll(){
+    public List<Admin> getAllAdmin(){
         return adminRepository.findAll();
     }
 
-    public void save(Admin admin){
+    public void saveAdmin(Admin admin){
         adminRepository.saveAndFlush(admin);
     }
 
-    public void delete(Long id){
+    public void deleteAdminbyId(Long id){
         adminRepository.deleteById(id);
     }
 
@@ -30,4 +30,9 @@ public class AdminService implements Serializable {
         Admin ad = adminRepository.findByName(name);
         return ad;
     }
+
+    public boolean login(String name,String passwd){
+        return false;
+    }
+
 }
