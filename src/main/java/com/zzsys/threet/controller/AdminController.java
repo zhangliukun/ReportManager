@@ -34,7 +34,7 @@ public class AdminController {
         // 处理"/admin/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
         adminMap.put(admin.getId(), admin);
-        adminService.save(admin);
+        adminService.saveAdmin(admin);
         return "success";
     }
 
