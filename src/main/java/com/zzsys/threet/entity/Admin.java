@@ -22,7 +22,8 @@ public class Admin implements Serializable {
     @Column(nullable = false)
     private String passwd;
 
-
+    //必须有一个无参构造方法，否则会报错
+    public Admin(){}
 
     public Long getId() {
         return id;

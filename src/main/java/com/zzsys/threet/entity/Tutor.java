@@ -94,5 +94,7 @@ public class Tutor implements Serializable {
         this.password = password;
     }
 
+    public  Tutor(){}
+
 
 }

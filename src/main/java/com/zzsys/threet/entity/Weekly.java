@@ -104,6 +104,8 @@ public class Weekly implements Serializable {
      @Column(nullable = true)
      private String  valuedContent;
 
+     public Weekly(){}
+
 
 
 }

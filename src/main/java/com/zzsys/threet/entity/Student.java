@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 public class Student implements Serializable {
+
     //学号
     @Id
     @GeneratedValue
@@ -104,4 +105,6 @@ public class Student implements Serializable {
     public void setDepartment(String department) {
         this.department = department;
     }
+
+    public Student(){}
 }
