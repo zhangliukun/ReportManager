@@ -8,7 +8,7 @@ import com.zzsys.threet.entity.Weekly;
 /**
  * Created by zale on 2018/11/1.
  **/
-public class HttpReponse {
+public class HttpRep {
     private int status; //0代表成功，1代表失败
     private String response; //返回一些字符串
     private Admin admin;  //定义一些实体

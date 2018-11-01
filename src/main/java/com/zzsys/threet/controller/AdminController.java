@@ -1,7 +1,7 @@
 package com.zzsys.threet.controller;
 
 import com.zzsys.threet.entity.Admin;
-import com.zzsys.threet.httpcode.HttpReponse;
+import com.zzsys.threet.httpcode.HttpRep;
 import com.zzsys.threet.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,12 +30,12 @@ public class AdminController {
         return r;
     }
 
-    @RequestMapping(value="/", method=RequestMethod.POST)
-    public HttpReponse postUser(@ModelAttribute Admin admin) {
+    @RequestMapping(value="/register", method=RequestMethod.POST)
+    public HttpRep postUser(@ModelAttribute Admin admin) {
         // 处理"/admin/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
         Admin resp = adminService.saveAdmin(admin);
-        HttpReponse reponse = new HttpReponse();
+        HttpRep reponse = new HttpRep();
         reponse.setAdmin(resp);
         return reponse;
     }
@@ -63,18 +63,18 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public HttpReponse login(String name, String passwd){
+    public HttpRep login(String name, String passwd){
         System.out.println(name+" "+ passwd);
         Admin result = adminService.login(name,passwd);
 
-        HttpReponse httpReponse = new HttpReponse();
+        HttpRep httpRep = new HttpRep();
         if (result!=null){
             result.setPasswd("");
-            httpReponse.setAdmin(result);
+            httpRep.setAdmin(result);
         }else {
-            httpReponse.setStatus(1);
+            httpRep.setStatus(1);
         }
-        return httpReponse;
+        return httpRep;
     }
 
 }

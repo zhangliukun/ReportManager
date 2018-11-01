@@ -12,7 +12,7 @@ public class Weekly implements Serializable {
     //唯一标志id
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
     //周报所属学生
     @Column(nullable = false)
@@ -34,11 +34,19 @@ public class Weekly implements Serializable {
     @Column(nullable = false)
     private Date commitDate;
 
-    public int getId() {
+    //是否已被评价
+    @Column(nullable = false)
+    private Boolean hasbeenValued = false;
+
+    //周报评价内容
+    @Column(nullable = true)
+    private String  valuedContent;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -98,13 +106,7 @@ public class Weekly implements Serializable {
         this.valuedContent = valuedContent;
     }
 
-    //是否已被评价
-    @Column(nullable = false)
-    private Boolean hasbeenValued;
 
-     //周报评价内容
-     @Column(nullable = true)
-     private String  valuedContent;
 
      public Weekly(){}
 
