@@ -18,8 +18,8 @@ public class AdminService{
         return adminRepository.findAll();
     }
 
-    public void saveAdmin(Admin admin){
-        adminRepository.saveAndFlush(admin);
+    public Admin saveAdmin(Admin admin){
+        return adminRepository.saveAndFlush(admin);
     }
 
     public void deleteAdminbyId(Long id){
@@ -31,8 +31,9 @@ public class AdminService{
         return ad;
     }
 
-    public boolean login(String name,String passwd){
-        return false;
+    public Admin login(String name,String passwd){
+        Admin resp = adminRepository.findUser(name,passwd);
+        return resp;
     }
 
 }

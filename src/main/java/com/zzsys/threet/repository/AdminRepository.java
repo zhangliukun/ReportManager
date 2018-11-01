@@ -13,8 +13,8 @@ public interface AdminRepository extends JpaRepository<Admin,Long> {
 
     Admin findByName(String name);
 
-    @Query("from Admin a where a.name=:name")
-    Admin findUser(@Param("name")String name);
+    @Query("from Admin a where a.name=:name and a.passwd=:passwd")
+    Admin findUser(@Param("name")String name,@Param("passwd")String passwd);
 
 
 
