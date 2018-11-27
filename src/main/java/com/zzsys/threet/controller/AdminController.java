@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/admin")
 public class AdminController {
     static Map<Long, Admin> adminMap = Collections.synchronizedMap(new HashMap<Long, Admin>());

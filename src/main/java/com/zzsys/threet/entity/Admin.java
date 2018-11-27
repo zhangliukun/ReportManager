@@ -16,7 +16,7 @@ public class Admin implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private Integer age;
 
     @Column(nullable = false)
